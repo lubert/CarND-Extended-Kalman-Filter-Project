@@ -39,7 +39,7 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
   // Precompute denominators
   float sum = px*px + py*py;
   float dist = sqrt(sum);
-  float cube = pow(sum, 3/2);
+  float cube = sum * dist;
   // Check division by zero
   if (fabs(sum) < 0.001) {
     cout << "CalculateJacobian () - Error - Division by Zero" << endl;
